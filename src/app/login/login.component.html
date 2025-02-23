@@ -2,14 +2,27 @@
   <div class="w-full flex flex-col items-center justify-center gap-3 py-5">
     <div class="flex flex-col gap-2">
       <label for="username">Username</label>
-      <input pInputText id="username" type="text" />
+      <input
+        pInputText
+        [(ngModel)]="loginObj.email"
+        id="email"
+        name="email"
+        type="text"
+      />
     </div>
     <div class="flex flex-col gap-2">
       <label for="password">Password</label>
-      <input pInputText id="password" type="password" />
+      <input
+        pInputText
+        [(ngModel)]="loginObj.password"
+        id="password"
+        name="password"
+        type="password"
+      />
     </div>
     <div class="flex flex-col gap-2">
       <p-button
+        (click)="onLogin()"
         label="Login"
         icon="pi pi-user"
         class="w-full max-w-[17.35rem]"
